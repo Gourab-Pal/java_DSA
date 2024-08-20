@@ -9,17 +9,9 @@ class cumulativeSum{
     public static int[] calculateCumulativeSum(int[] a) {
         int sum = 0;
         int n = a.length;
-        int[] r = new int[n];
-        for (int j = 0; j<n; j++) {
-            if (j==0) {
-                sum = a[j];
-                r[j] = sum;
-            }
-            else {
-                sum = sum + a[j];
-                r[j] = sum;
-            }
+        for (int j = 1; j<n; j++) {
+            a[j] = a[j] + a[j-1];
         }
-        return r;
+        return a;
     }
 }
